@@ -4,11 +4,9 @@ import Logo from "../../assets/images/Logo(cragList).png";
 
 export default function Header() {
   return (
-    <>
-      <StyledHeader>
-        <Image src={Logo} width={100} />
-      </StyledHeader>
-    </>
+    <StyledHeader>
+      <Image src={Logo} width={100} />
+    </StyledHeader>
   );
 }
 

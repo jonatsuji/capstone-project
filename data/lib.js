@@ -1,4 +1,6 @@
-const areas = [
+import { nanoid } from "nanoid";
+
+export const areas = [
   {
     name: "Avalonia",
     routes: 485,
@@ -15,6 +17,7 @@ const areas = [
 
 export const routes = [
   {
+    id: nanoid(),
     name: "Glastonbury",
     grade: "5b",
     length: "",
@@ -25,6 +28,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Stonehendge",
     grade: "6a",
     length: "",
@@ -35,6 +39,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Yeovil",
     grade: "5b",
     length: "",
@@ -45,6 +50,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Portland",
     grade: "5a",
     length: "",
@@ -56,6 +62,7 @@ export const routes = [
   },
 
   {
+    id: nanoid(),
     name: "Alte Zeiten",
     grade: "7a+",
     length: "",
@@ -66,6 +73,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Gaston",
     grade: "6c+",
     length: "",
@@ -76,6 +84,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Im Land der Dämmerung",
     grade: "6c",
     length: "",
@@ -86,6 +95,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Eliminates are beautiful",
     grade: "6c+",
     length: "",
@@ -96,6 +106,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Platz ohne Ende",
     grade: "5c",
     length: "",
@@ -106,6 +117,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Stier im Rücken",
     grade: "6a+",
     length: 4,
@@ -116,6 +128,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Des Sammlers Beute",
     grade: "5a",
     length: 2,
@@ -126,6 +139,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Katzengold",
     grade: "6b+",
     length: "",
@@ -136,6 +150,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Dicke Emma",
     grade: "7b+/c",
     length: "",
@@ -146,6 +161,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Ojo de Gato",
     grade: "6a+",
     length: 6,
@@ -156,6 +172,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Kleine Versschule",
     grade: "5c",
     length: 5,
@@ -166,6 +183,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Kleine Versschule II",
     grade: "5a",
     length: 5,
@@ -176,6 +194,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Ozean der vergessenen Träume",
     grade: "6a",
     length: 5,
@@ -186,6 +205,7 @@ export const routes = [
     pos: "51.40308, 7.40793",
   },
   {
+    id: nanoid(),
     name: "Walpurgisnacht",
     grade: "6b",
     length: "",
@@ -197,6 +217,7 @@ export const routes = [
   },
 
   {
+    id: nanoid(),
     name: "Soweit die Arme reichen",
     grade: "6c",
     length: 3,
@@ -207,6 +228,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Meuchel Mörder",
     grade: "6b+",
     length: 3,
@@ -217,6 +239,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Beißen & Reißen für umme",
     grade: "7a",
     length: 3,
@@ -227,6 +250,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Beißen & Reißen für 6 Cent",
     grade: "6c+",
     length: 3,
@@ -237,6 +261,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Der Nachtmahr",
     grade: "6c",
     length: 4,
@@ -247,6 +272,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Limbo für Anfänger",
     grade: "6a+",
     length: "",
@@ -257,6 +283,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Limbo",
     grade: "7a",
     length: "",
@@ -267,6 +294,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Abendrot",
     grade: "6a",
     length: 4,
@@ -277,6 +305,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Sonne im Rücken",
     grade: "5a",
     length: 4,
@@ -287,6 +316,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Taj Mahal",
     grade: "5a",
     length: 4,
@@ -297,6 +327,7 @@ export const routes = [
     pos: "51.40295, 7.40755",
   },
   {
+    id: nanoid(),
     name: "Atempause",
     grade: "6a",
     length: 4,
@@ -308,6 +339,7 @@ export const routes = [
   },
 
   {
+    id: nanoid(),
     name: "Lucifer",
     grade: "7b",
     length: "",
@@ -318,6 +350,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "La Narine",
     grade: "6a",
     length: "",
@@ -328,6 +361,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "No Mojo",
     grade: "6b+",
     length: 2,
@@ -338,6 +372,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "Le Bidoigt",
     grade: "6b",
     length: "",
@@ -348,6 +383,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "L'Oblique",
     grade: "7a",
     length: 3,
@@ -358,6 +394,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "La Fausse Rouge ",
     grade: "4c",
     length: "",
@@ -368,6 +405,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "Lime à Ongles ",
     grade: "7a",
     length: "",
@@ -378,6 +416,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "La Classique",
     grade: "6a",
     length: "",
@@ -388,6 +427,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "Jet Set",
     grade: "7a",
     length: "",
@@ -398,6 +438,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "Smash",
     grade: "7b",
     length: 3,
@@ -408,6 +449,7 @@ export const routes = [
     pos: "48.37491, 2.51444",
   },
   {
+    id: nanoid(),
     name: "Le Jeu du Toit",
     grade: "7a",
     length: 3,

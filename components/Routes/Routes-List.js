@@ -4,7 +4,7 @@ export default function RoutesList() {
   return (
     <ul>
       {routes?.map((route) => (
-        <li>
+        <li key={route.id}>
           {route.name} / {route.grade} / {route.area}
         </li>
       ))}
