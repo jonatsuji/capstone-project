@@ -2,14 +2,43 @@ import { nanoid } from "nanoid";
 
 export const areas = [
   {
+    id: nanoid(),
     name: "Avalonia",
     routes: 485,
     stone: "Sandstone",
     country: "Germany",
   },
   {
+    id: nanoid(),
     name: "Île-de-France",
     routes: 30045,
+    stone: "Sandstone",
+    country: "France",
+  },
+];
+
+export const sectors = [
+  {
+    id: nanoid(),
+    name: "Kirschblütental",
+    routes: 18,
+    area: "Avalonia",
+    stone: "Sandstone",
+    country: "Germany",
+  },
+  {
+    id: nanoid(),
+    name: "Galerie",
+    routes: 11,
+    area: "Avalonia",
+    stone: "Sandstone",
+    country: "Germany",
+  },
+  {
+    id: nanoid(),
+    name: "Roche aux Sabot",
+    routes: 11,
+    area: "Île-de-France",
     stone: "Sandstone",
     country: "France",
   },

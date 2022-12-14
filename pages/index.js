@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header";
-import RoutesList from "../components/Routes/Routes-List";
+import Main from "../components/Main/Main";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <RoutesList />
+      <Main />
     </>
   );
 }
