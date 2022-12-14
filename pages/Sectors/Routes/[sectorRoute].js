@@ -4,13 +4,13 @@ import { routes } from "../../../data/lib";
 
 export default function Route() {
   const router = useRouter();
-  const slug = router.query.slug;
+  const { sectorRoute } = router.query;
 
-  if (slug === undefined) {
+  if (sectorRoute === undefined) {
     return null;
   }
 
-  const sectorRoutes = routes.filter((route) => route.sector === slug);
+  const sectorRoutes = routes.filter((route) => route.sector === sectorRoute);
 
   return (
     <>

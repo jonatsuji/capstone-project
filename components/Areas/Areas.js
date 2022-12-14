@@ -7,7 +7,7 @@ export default function Areas() {
     <StyledPageContainer>
       {areas.map((area) => (
         <StyledCard key={area.id}>
-          <Link href={`/Sectors/${area.name}`}>
+          <Link href={`sectors/${area.name}`}>
             {area.name} / {area.country}
           </Link>
         </StyledCard>

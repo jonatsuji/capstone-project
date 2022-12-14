@@ -7,7 +7,7 @@ export default function SectorsList() {
     <StyledPageContainer>
       {sectors.map((sector) => (
         <StyledCard key={sector.id}>
-          <Link href={`/`}>
+          <Link href={`/areas`}>
             {sector.name} / Routes: {sector.routes}
           </Link>
         </StyledCard>
