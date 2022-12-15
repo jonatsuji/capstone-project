@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { areas } from "../../data/lib";
 import Link from "next/link";
+import { backgroundImage } from "../../assets/images/sandstone-bright-crack.jpg";
 
 export default function Areas() {
   return (
@@ -26,6 +27,12 @@ const StyledCard = styled.div`
 `;
 
 const StyledPageContainer = styled.div`
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 246, 252, 0.52),
+      rgba(117, 19, 93, 0.73)
+    ),
+    url(${backgroundImage});
   display: grid;
   grid-template-columns: 80%;
   justify-content: center;
