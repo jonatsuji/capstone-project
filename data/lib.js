@@ -7,6 +7,7 @@ export const areas = [
     routes: 485,
     stone: "Sandstone",
     country: "Germany",
+    image: "/../public/images/crimp-underhold.jpg",
   },
   {
     id: nanoid(),
@@ -14,6 +15,7 @@ export const areas = [
     routes: 30045,
     stone: "Sandstone",
     country: "France",
+    image: "/../public/images/onearm-hang-font.jpg",
   },
 ];
 
