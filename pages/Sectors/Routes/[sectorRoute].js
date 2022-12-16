@@ -7,7 +7,7 @@ export default function Route() {
   const router = useRouter();
   const { sectorRoute } = router.query;
 
-  if (sectorRoute === undefined) {
+  if (!sectorRoute) {
     return null;
   }
 
@@ -17,7 +17,7 @@ export default function Route() {
     <>
       <ul>
         {sectorRoutes.map((sectorRoute) => (
-          <li>
+          <li key={sectorRoute.id}>
             {sectorRoute.name} / {sectorRoute.grade}
           </li>
         ))}

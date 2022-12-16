@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header";
-import Main from "../components/Main/Main";
+import Areas from "../components/Areas/Areas";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Main />
+      <Areas />
     </>
   );
 }

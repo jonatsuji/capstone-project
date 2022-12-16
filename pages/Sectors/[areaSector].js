@@ -10,7 +10,7 @@ export default function Sectors() {
   const router = useRouter();
   const { areaSector } = router.query;
 
-  if (areaSector === undefined) {
+  if (!areaSector) {
     return null;
   }
 

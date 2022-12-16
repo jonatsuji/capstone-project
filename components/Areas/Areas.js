@@ -7,18 +7,20 @@ export default function Areas() {
     <StyledPageContainer>
       <StyledTopic>I need Information about...</StyledTopic>
       {areas.map((area) => (
-        <StyledCard key={area.id}>
-          <StyledLink href={`sectors/${area.name}`}>{area.name}</StyledLink>
-          <StyledRoutes>Routes: {area.routes}</StyledRoutes>
-          <StyledStone>{area.stone}</StyledStone>
-          <StyledCountry>{area.country}</StyledCountry>
-        </StyledCard>
+        <StyledLink href={`sectors/${area.name}`}>
+          <StyledCard key={area.id}>
+            <StyledName>{area.name}</StyledName>
+            <StyledRoutes>Routes: {area.routes}</StyledRoutes>
+            <StyledStone>{area.stone}</StyledStone>
+            <StyledCountry>{area.country}</StyledCountry>
+          </StyledCard>
+        </StyledLink>
       ))}
     </StyledPageContainer>
   );
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.section`
   text-align: left;
   align-items: flex-end;
   font-weight: bold;
@@ -42,8 +44,6 @@ const StyledCard = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: underline;
   color: #002400;
-  grid-column-start: 1;
-  grid-column-end: 3;
   box-shadow: inset 0 0 0 0 #54b3d6;
   margin: 0 -0.25rem;
   padding: 0 0.25rem;
@@ -54,6 +54,12 @@ const StyledRoutes = styled.div`
   grid-column-start: 1;
   grid-column-end: 3;
   border-top: 1px black solid;
+`;
+
+const StyledName = styled.div`
+  font-size: 24px;
+  grid-column-start: 1;
+  grid-column-end: 3;
 `;
 
 const StyledStone = styled.div`
