@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header";
-import RoutesList from "../components/Routes/Routes-List";
+import Areas from "../components/Areas/Areas";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <RoutesList />
+      <Areas />
     </>
   );
 }
