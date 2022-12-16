@@ -7,8 +7,8 @@ export default function Areas() {
     <StyledPageContainer>
       <StyledTopic>I need Information about...</StyledTopic>
       {areas.map((area) => (
-        <StyledLink href={`sectors/${area.name}`}>
-          <StyledCard key={area.id}>
+        <StyledLink key={area.id} href={`sectors/${area.name}`}>
+          <StyledCard>
             <StyledName>{area.name}</StyledName>
             <StyledRoutes>Routes: {area.routes}</StyledRoutes>
             <StyledStone>{area.stone}</StyledStone>
@@ -20,7 +20,7 @@ export default function Areas() {
   );
 }
 
-const StyledCard = styled.section`
+const StyledCard = styled.article`
   text-align: left;
   align-items: flex-end;
   font-weight: bold;
@@ -49,30 +49,34 @@ const StyledLink = styled(Link)`
   padding: 0 0.25rem;
 `;
 
-const StyledRoutes = styled.div`
+const StyledRoutes = styled.p`
+  margin: 0px;
   font-size: 16px;
   grid-column-start: 1;
   grid-column-end: 3;
   border-top: 1px black solid;
 `;
 
-const StyledName = styled.div`
+const StyledName = styled.p`
   font-size: 24px;
   grid-column-start: 1;
   grid-column-end: 3;
+  margin: 0px;
 `;
 
-const StyledStone = styled.div`
+const StyledStone = styled.p`
   font-size: 16px;
+  border-top: 1px black solid;
+  margin: 0px;
+`;
+
+const StyledCountry = styled.p`
+  font-size: 16px;
+  margin: 0px;
   border-top: 1px black solid;
 `;
 
-const StyledCountry = styled.div`
-  font-size: 16px;
-  border-top: 1px black solid;
-`;
-
-const StyledPageContainer = styled.div`
+const StyledPageContainer = styled.section`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;

@@ -19,10 +19,8 @@ export default function Sectors() {
   return (
     <>
       <Header />
-      <ImgWrapper>
-        <Link href="/">
-          <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
-        </Link>
+      <ImgWrapper href="/">
+        <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
       </ImgWrapper>
       <StyledPageContainer>
         {areaSectors.map((areaSector) => (
@@ -89,7 +87,7 @@ const StyledPageContainer = styled.div`
   margin-top: 80px;
 `;
 
-const ImgWrapper = styled.div`
+const ImgWrapper = styled(Link)`
   position: relative;
   top: 80px;
   left: 15px;
