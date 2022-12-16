@@ -83,10 +83,10 @@ const StyledStone = styled.div`
 const StyledPageContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 20px;
   height: 100vh;
-  //border: red 1px solid;
+  margin-top: 80px;
 `;
 
 const ImgWrapper = styled.div`
