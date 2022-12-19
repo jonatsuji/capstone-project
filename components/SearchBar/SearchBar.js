@@ -19,7 +19,23 @@ export default function SearchBar() {
   }
 
   return (
-    <StyledSearch>
+    <>
+      {filteredData.length != 0 && (
+        <StyledSearch>
+          <StyledSearchResults>
+            {filteredData.slice(0, 10).map((route) => {
+              return (
+                <SyteledResultLink key={route.id} href="/sectors/routes">
+                  <SytledResultItem className="resultItem">
+                    <p className="resultText">{route.name}</p>
+                  </SytledResultItem>
+                </SyteledResultLink>
+              );
+            })}
+          </StyledSearchResults>
+        </StyledSearch>
+      )}
+
       <StyledSearchInputs>
         <input
           type="text"
@@ -28,41 +44,67 @@ export default function SearchBar() {
         />
         <StyledSearchIcon></StyledSearchIcon>
       </StyledSearchInputs>
-      {filteredData.length != 0 && (
-        <StyledSearchResults>
-          {filteredData.slice(0, 10).map((route) => {
-            return (
-              <SyteledResultLink key={route.id} href="/sectors/routes">
-                <SytledResultItem className="resultItem">
-                  <p className="resultText">{route.name}</p>
-                </SytledResultItem>
-              </SyteledResultLink>
-            );
-          })}
-        </StyledSearchResults>
-      )}
-    </StyledSearch>
+    </>
   );
 }
 
 const StyledSearch = styled.div`
-  justify-content: flex-start;
+  display: flex;
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  justify-content: center;
   align-self: center;
+  //border: 1px red solid;
+  height: 250px;
 `;
 
-const StyledSearchInputs = styled.div``;
+const StyledSearchInputs = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 5px;
+  //border: 1px green solid;
+
+  input {
+    position: relative;
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    :hover {
+      outline: 1px solid var(--color-brown);
+    }
+    :focus {
+      outline: 2px solid var(--color-brown);
+      caret-color: white;
+    }
+    :placeholder-shown {
+      &:focus {
+        color: transparent;
+      }
+    }
+  }
+`;
 
 const StyledSearchIcon = styled.div``;
 
 const StyledSearchResults = styled.div`
   position: absolute;
   margin-top: 5px;
-  width: 300px;
+  width: 89%;
   height: 200px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
+  border-radius: 10px;
+  background-color: var(--color-beige);
 
   .resultText {
     margin-left: 10px;

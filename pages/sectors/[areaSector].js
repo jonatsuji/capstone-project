@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Header from "../../components/Header/Header.js";
 import Image from "next/image";
 import BackArrow from "../../public/images/back-arrow-white.png";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default function Sectors() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function Sectors() {
   return (
     <>
       <Header />
+      <SearchBar />
       <ImgWrapper href="/">
         <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
       </ImgWrapper>

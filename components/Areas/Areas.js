@@ -5,20 +5,22 @@ import SearchBar from "../SearchBar/SearchBar";
 
 export default function Areas() {
   return (
-    <StyledPageContainer>
+    <>
+      <StyledPageContainer>
+        <StyledTopic>I need Information about...</StyledTopic>
+        {areas.map((area) => (
+          <StyledLink key={area.id} href={`sectors/${area.name}`}>
+            <StyledCard>
+              <StyledName>{area.name}</StyledName>
+              <StyledRoutes>Routes: {area.routes}</StyledRoutes>
+              <StyledStone>{area.stone}</StyledStone>
+              <StyledCountry>{area.country}</StyledCountry>
+            </StyledCard>
+          </StyledLink>
+        ))}
+      </StyledPageContainer>
       <SearchBar />
-      <StyledTopic>I need Information about...</StyledTopic>
-      {areas.map((area) => (
-        <StyledLink key={area.id} href={`sectors/${area.name}`}>
-          <StyledCard>
-            <StyledName>{area.name}</StyledName>
-            <StyledRoutes>Routes: {area.routes}</StyledRoutes>
-            <StyledStone>{area.stone}</StyledStone>
-            <StyledCountry>{area.country}</StyledCountry>
-          </StyledCard>
-        </StyledLink>
-      ))}
-    </StyledPageContainer>
+    </>
   );
 }
 
@@ -83,7 +85,7 @@ const StyledPageContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  height: 100vh;
+  height: 92vh;
 `;
 
 const StyledTopic = styled.h1`
