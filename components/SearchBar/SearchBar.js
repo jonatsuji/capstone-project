@@ -42,7 +42,6 @@ export default function SearchBar() {
           placeholder="search a Route..."
           onChange={handleFilter}
         />
-        <StyledSearchIcon></StyledSearchIcon>
       </StyledSearchInputs>
     </>
   );
@@ -91,8 +90,6 @@ const StyledSearchInputs = styled.div`
     }
   }
 `;
-
-const StyledSearchIcon = styled.div``;
 
 const StyledSearchResults = styled.div`
   position: absolute;
