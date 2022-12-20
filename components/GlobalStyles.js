@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
    
    html,
     body {
+      position: relative;
         padding: 0;
         margin: 0;
         font-family: Dosis;
@@ -23,6 +24,7 @@ const GlobalStyles = createGlobalStyle`
       rgba(255, 255, 255, 0) 100%
     ),
     url("/images/sandstone-bright-crack.jpg");
+    z-index: -100;
   background-size: cover;
   background-attachment: fixed;
         

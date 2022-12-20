@@ -1,22 +1,26 @@
 import styled from "styled-components";
 import { areas } from "../../data/lib";
 import Link from "next/link";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Areas() {
   return (
-    <StyledPageContainer>
-      <StyledTopic>I need Information about...</StyledTopic>
-      {areas.map((area) => (
-        <StyledLink key={area.id} href={`sectors/${area.name}`}>
-          <StyledCard>
-            <StyledName>{area.name}</StyledName>
-            <StyledRoutes>Routes: {area.routes}</StyledRoutes>
-            <StyledStone>{area.stone}</StyledStone>
-            <StyledCountry>{area.country}</StyledCountry>
-          </StyledCard>
-        </StyledLink>
-      ))}
-    </StyledPageContainer>
+    <>
+      <StyledPageContainer>
+        <StyledTopic>I need Information about...</StyledTopic>
+        {areas.map((area) => (
+          <StyledLink key={area.id} href={`sectors/${area.name}`}>
+            <StyledCard>
+              <StyledName>{area.name}</StyledName>
+              <StyledRoutes>Routes: {area.routes}</StyledRoutes>
+              <StyledStone>{area.stone}</StyledStone>
+              <StyledCountry>{area.country}</StyledCountry>
+            </StyledCard>
+          </StyledLink>
+        ))}
+      </StyledPageContainer>
+      <SearchBar />
+    </>
   );
 }
 
@@ -78,15 +82,14 @@ const StyledCountry = styled.p`
 
 const StyledPageContainer = styled.section`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   gap: 20px;
-  height: 100vh;
+  height: 92vh;
 `;
 
 const StyledTopic = styled.h1`
-  position: absolute;
-  top: 100px;
+  position: relative;
   align-self: center;
   color: white;
 `;

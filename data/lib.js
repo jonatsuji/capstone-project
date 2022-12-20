@@ -17,6 +17,14 @@ export const areas = [
     country: "France",
     image: "/../public/images/onearm-hang-font.jpg",
   },
+  {
+    id: nanoid(),
+    name: "Île-de-France",
+    routes: 30045,
+    stone: "Sandstone",
+    country: "France",
+    image: "/../public/images/onearm-hang-font.jpg",
+  },
 ];
 
 export const sectors = [
