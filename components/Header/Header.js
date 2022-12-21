@@ -18,7 +18,7 @@ const StyledHeader = styled.h1`
   padding: 10px;
   display: flex;
   justify-content: center;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  // border-bottom-left-radius: 20px;
+  // border-bottom-right-radius: 20px;
   top: 0px;
 `;
