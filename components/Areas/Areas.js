@@ -86,6 +86,7 @@ const StyledPageContainer = styled.section`
   justify-content: center;
   gap: 20px;
   height: 92vh;
+  overflow-x: hidden;
 `;
 
 const StyledTopic = styled.h1`

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { routes } from "../../../data/lib";
-import Header from "../../../components/Header/Header";
+import { routes } from "../../../../data/lib";
+import Header from "../../../../components/Header/Header";
 import styled from "styled-components";
 import BackArrow from "../../../public/images/back-arrow-white.png";
 import Image from "next/image";

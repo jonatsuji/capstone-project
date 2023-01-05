@@ -102,6 +102,7 @@ const StyledSearchResults = styled.div`
   overflow-y: auto;
   border-radius: 10px;
   background-color: var(--color-beige);
+  z-index: 2;
 
   .resultText {
     margin-left: 10px;

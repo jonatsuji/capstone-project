@@ -4,7 +4,7 @@ import { routes } from "../../../data/lib";
 import Header from "../../../components/Header/Header";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import styled from "styled-components";
-import BackArrow from "../../../public/images/back-arrow-white.png";
+import BackArrow from "../../../public/images/back-arrow.png";
 import Image from "next/image";
 
 export default function Route() {
@@ -20,15 +20,22 @@ export default function Route() {
   return (
     <StyledPageContainer>
       <Header />
+      <SearchBar />
+      <StyledHeadline>{sectorRoutes[0].sector}</StyledHeadline>
       <ImgWrapper href={`/sectors/${sectorRoutes[0].area}`}>
         <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
       </ImgWrapper>
       <SearchBar />
       <StyledList>
         {sectorRoutes.map((sectorRoute) => (
-          <li key={sectorRoute.id}>
-            {sectorRoute.name} / {sectorRoute.grade}
-          </li>
+          <StyledLink
+            href={`/sectors/routes/${sectorRoutes[0].sector}/${sectorRoutes.route}`}
+          >
+            <StyledRoute key={sectorRoute.id}>
+              <div>{sectorRoute.name}</div>
+              <StyledGrade>{sectorRoute.grade}</StyledGrade>
+            </StyledRoute>
+          </StyledLink>
         ))}
       </StyledList>
     </StyledPageContainer>
@@ -39,21 +46,53 @@ const StyledPageContainer = styled.div`
   background-image: url("/images/stacked-peaks-haikei.png");
   height: 100vh;
   background-size: cover;
-  border: 1px green solid;
+  //border: 1px green solid;
   display: flex;
   justify-content: center;
+  overflow-y: hidden;
+`;
+
+const StyledHeadline = styled.h1`
+  position: relative;
+  top: 50px;
+`;
+
+const StyledRoute = styled.li`
+  border-top: 1px black solid;
+  background-color: var(--color-item);
+  display: grid;
+  grid-template-columns: 85% 1fr;
+  padding: 10px;
+  font-size: 18px;
+`;
+
+const StyledGrade = styled.div`
+  text-align: end;
+  border-left: 1px black solid;
 `;
 
 const StyledList = styled.ul`
   position: absolute;
-  top: 60px;
-  border: 1px red solid;
+  top: 110px;
+  //border-bottom: 3px black solid;
   padding-inline-start: 0px;
   list-style: none;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  height: 550px;
+  overflow-y: scroll;
+  z-index: 0;
 `;
 
 const ImgWrapper = styled(Link)`
   position: absolute;
   top: 80px;
   left: 15px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;
