@@ -51,7 +51,8 @@ const StyledSectorCard = styled.div`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  margin: 10px;
+  //margin: 10px;
+  width: 100vw;
   :hover {
     cursor: pointer;
   }
@@ -86,9 +87,9 @@ const StyledPageContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 10px;
   height: 100vh;
-  margin-top: 80px;
+  margin-top: 90px;
 `;
 
 const ImgWrapper = styled(Link)`

@@ -17,28 +17,48 @@ export default function Route() {
 
   const sectorRoutes = routes.filter((route) => route.sector === sectorRoute);
 
+  function addSlugProperty(routes) {
+    routes.forEach(function (route) {
+      if (!route.hasOwnProperty("slug")) {
+        route.slug = createSlug(route.name);
+      }
+    });
+  }
+
+  function createSlug(name) {
+    return name
+      .toLowerCase()
+      .replace(/[^\w ]+/g, "")
+      .replace(/ +/g, "-");
+  }
+
+  addSlugProperty(routes);
+
   return (
-    <StyledPageContainer>
-      <Header />
+    <>
+      <StyledPageContainer>
+        <Header />
+
+        <StyledHeadline>{sectorRoutes[0].sector}</StyledHeadline>
+        <ImgWrapper href={`/sectors/${sectorRoutes[0].area}`}>
+          <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
+        </ImgWrapper>
+        <StyledList>
+          {sectorRoutes.map((sectorRoute) => (
+            <StyledLink
+              href={`/sectors/routes/singlePage/${sectorRoute.slug}`}
+              key={sectorRoute.id}
+            >
+              <StyledRoute>
+                <div>{sectorRoute.name}</div>
+                <StyledGrade>{sectorRoute.grade}</StyledGrade>
+              </StyledRoute>
+            </StyledLink>
+          ))}
+        </StyledList>
+      </StyledPageContainer>
       <SearchBar />
-      <StyledHeadline>{sectorRoutes[0].sector}</StyledHeadline>
-      <ImgWrapper href={`/sectors/${sectorRoutes[0].area}`}>
-        <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
-      </ImgWrapper>
-      <SearchBar />
-      <StyledList>
-        {sectorRoutes.map((sectorRoute) => (
-          <StyledLink
-            href={`/sectors/routes/${sectorRoutes[0].sector}/${sectorRoutes.route}`}
-          >
-            <StyledRoute key={sectorRoute.id}>
-              <div>{sectorRoute.name}</div>
-              <StyledGrade>{sectorRoute.grade}</StyledGrade>
-            </StyledRoute>
-          </StyledLink>
-        ))}
-      </StyledList>
-    </StyledPageContainer>
+    </>
   );
 }
 
@@ -80,10 +100,8 @@ const StyledList = styled.ul`
   width: 100vw;
   display: flex;
   flex-direction: column;
-
   height: 550px;
   overflow-y: scroll;
-  z-index: 0;
 `;
 
 const ImgWrapper = styled(Link)`

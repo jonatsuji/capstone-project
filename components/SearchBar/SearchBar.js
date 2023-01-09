@@ -25,7 +25,10 @@ export default function SearchBar() {
           <StyledSearchResults>
             {filteredData.slice(0, 10).map((route) => {
               return (
-                <SyteledResultLink key={route.id} href="/sectors/routes">
+                <SyteledResultLink
+                  key={route.id}
+                  href={`/sectors/routes/singlePage/${route.slug}`}
+                >
                   <SytledResultItem className="resultItem">
                     <p className="resultText">{route.name}</p>
                   </SytledResultItem>
@@ -103,6 +106,7 @@ const StyledSearchResults = styled.div`
   border-radius: 10px;
   background-color: var(--color-beige);
   z-index: 2;
+  border: 2px green solid;
 
   .resultText {
     margin-left: 10px;
