@@ -90,6 +90,7 @@ const StyledPageContainer = styled.div`
   gap: 10px;
   height: 100vh;
   margin-top: 90px;
+  overflow-y: scroll;
 `;
 
 const ImgWrapper = styled(Link)`

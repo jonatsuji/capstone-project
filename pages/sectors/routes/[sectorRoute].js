@@ -66,7 +66,7 @@ const StyledPageContainer = styled.div`
   background-image: url("/images/stacked-peaks-haikei.png");
   height: 100vh;
   background-size: cover;
-  //border: 1px green solid;
+  //border: 3px green solid;
   display: flex;
   justify-content: center;
   overflow-y: hidden;

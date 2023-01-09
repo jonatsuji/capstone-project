@@ -31,7 +31,7 @@ export default function Areas() {
 const StyledUl = styled.ul`
   padding-inline-start: 0px;
   //border: 1px green solid;
-  margin-top: 190px;
+  margin-top: 230px;
 `;
 
 const StyledCard = styled.article`
@@ -109,6 +109,7 @@ const StyledTopic = styled.h1`
   font-size: 25px;
   font-weight: bold;
   text-decoration: underline;
+  z-index: -1;
 `;
 
 const StyledList = styled.li`

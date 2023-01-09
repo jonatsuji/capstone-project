@@ -31,7 +31,6 @@ export default function SingleRoute() {
           <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
         </ImgWrapper>
       </StyledPageContainer>
-      <SearchBar />
     </>
   );
 }
