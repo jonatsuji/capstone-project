@@ -7,22 +7,32 @@ export default function Areas() {
   return (
     <>
       <StyledPageContainer>
-        <StyledTopic>I need Information about...</StyledTopic>
-        {areas.map((area) => (
-          <StyledLink key={area.id} href={`sectors/${area.name}`}>
-            <StyledCard>
-              <StyledName>{area.name}</StyledName>
-              <StyledRoutes>Routes: {area.routes}</StyledRoutes>
-              <StyledStone>{area.stone}</StyledStone>
-              <StyledCountry>{area.country}</StyledCountry>
-            </StyledCard>
-          </StyledLink>
-        ))}
+        <StyledUl>
+          <StyledTopic>Boulderareas</StyledTopic>
+          {areas.map((area) => (
+            <StyledList key={area.id}>
+              <StyledLink href={`sectors/${area.name}`}>
+                <StyledCard>
+                  <StyledName>{area.name}</StyledName>
+                  <StyledRoutes>Routes: {area.routes}</StyledRoutes>
+                  <StyledStone>{area.stone}</StyledStone>
+                  <StyledCountry>{area.country}</StyledCountry>
+                </StyledCard>
+              </StyledLink>
+            </StyledList>
+          ))}
+        </StyledUl>
       </StyledPageContainer>
       <SearchBar />
     </>
   );
 }
+
+const StyledUl = styled.ul`
+  padding-inline-start: 0px;
+  //border: 1px green solid;
+  margin-top: 230px;
+`;
 
 const StyledCard = styled.article`
   text-align: left;
@@ -36,10 +46,12 @@ const StyledCard = styled.article`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  margin: 10px;
+
+  width: 100vw;
   :hover {
     cursor: pointer;
   }
+
   font-size: 25px;
   -webkit-box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
   box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
@@ -84,12 +96,28 @@ const StyledPageContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   height: 92vh;
+  overflow-x: hidden;
 `;
 
 const StyledTopic = styled.h1`
   position: relative;
-  align-self: center;
-  color: white;
+  color: black;
+  //border: 1px solid green;
+  padding-left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+  z-index: -1;
+`;
+
+const StyledList = styled.li`
+  display: flex;
+  list-style: none;
+  //border: 1px solid black;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 `;

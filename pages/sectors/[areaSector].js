@@ -47,15 +47,18 @@ const StyledSectorCard = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
-  background-color: #af9164;
+  background-color: var(--color-item);
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  margin: 10px;
+  //margin: 10px;
+  width: 100vw;
   :hover {
     cursor: pointer;
   }
   font-size: 25px;
+  -webkit-box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
+  box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
 `;
 
 const StyledLink = styled(Link)`
@@ -84,9 +87,10 @@ const StyledPageContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 10px;
   height: 100vh;
-  margin-top: 80px;
+  margin-top: 90px;
+  overflow-y: scroll;
 `;
 
 const ImgWrapper = styled(Link)`

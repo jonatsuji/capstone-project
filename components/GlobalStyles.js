@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
    :root{
     --color-beige: #F7F3E3;
     --color-brown: #564138;
+    --color-item: #af9164
     
    }
    

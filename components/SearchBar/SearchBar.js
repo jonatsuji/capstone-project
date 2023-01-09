@@ -25,7 +25,10 @@ export default function SearchBar() {
           <StyledSearchResults>
             {filteredData.slice(0, 10).map((route) => {
               return (
-                <SyteledResultLink key={route.id} href="/sectors/routes">
+                <SyteledResultLink
+                  key={route.id}
+                  href={`/sectors/routes/singlePage/${route.slug}`}
+                >
                   <SytledResultItem className="resultItem">
                     <p className="resultText">{route.name}</p>
                   </SytledResultItem>
@@ -68,20 +71,18 @@ const StyledSearchInputs = styled.div`
 
   input {
     position: relative;
-    width: 90%;
-    height: 40px;
+    width: 95%;
+    height: 45px;
     font-size: 20px;
     background-color: transparent;
     color: white;
-    border: none;
+    border: 3px dotted black;
     border-radius: 10px;
 
-    :hover {
-      outline: 1px solid var(--color-brown);
-    }
     :focus {
       outline: 2px solid var(--color-brown);
       caret-color: white;
+      background-color: black;
     }
     :placeholder-shown {
       &:focus {
@@ -102,6 +103,8 @@ const StyledSearchResults = styled.div`
   overflow-y: auto;
   border-radius: 10px;
   background-color: var(--color-beige);
+  z-index: 2;
+  border: 2px green solid;
 
   .resultText {
     margin-left: 10px;
