@@ -21,4 +21,5 @@ const StyledHeader = styled.h1`
   // border-bottom-left-radius: 20px;
   // border-bottom-right-radius: 20px;
   top: 0px;
+  z-index: 999;
 `;

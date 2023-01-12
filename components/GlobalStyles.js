@@ -12,6 +12,12 @@ const GlobalStyles = createGlobalStyle`
    
    html,
     body {
+      ::-webkit-scrollbar{
+        display: none;
+      }
+      overflow: scroll;
+      scroll-behavior: smooth;
+      height: 100vh;
       position: relative;
         padding: 0;
         margin: 0;
