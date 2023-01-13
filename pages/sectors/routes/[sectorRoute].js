@@ -100,7 +100,7 @@ const StyledList = styled.ul`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  height: 550px;
+  height: 72%;
   overflow-y: scroll;
 `;
 

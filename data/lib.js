@@ -88,7 +88,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -99,7 +100,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -110,7 +112,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -121,7 +124,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
 
   {
@@ -133,7 +137,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -144,7 +149,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -155,7 +161,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -166,7 +173,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -177,7 +185,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -188,7 +197,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -199,7 +209,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -210,7 +221,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -221,7 +233,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -232,7 +245,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -243,7 +257,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -254,7 +269,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -265,7 +281,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
   {
     id: nanoid(),
@@ -276,7 +293,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Kirschblütental",
     area: "Avalonia",
-    pos: "51.40308, 7.40793",
+    lng: 7.40793,
+    lat: 51.40308,
   },
 
   {
@@ -288,7 +306,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -299,7 +318,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -310,7 +330,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -321,7 +342,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -332,7 +354,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -343,7 +366,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -354,7 +378,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -365,7 +390,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -376,7 +402,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -387,7 +414,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
   {
     id: nanoid(),
@@ -398,7 +426,8 @@ export const routes = [
     walkTime: "5-10 Minutes",
     sector: "Galerie",
     area: "Avalonia",
-    pos: "51.40295, 7.40755",
+    lng: 7.40755,
+    lat: 51.40295,
   },
 
   {
@@ -410,7 +439,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -421,7 +451,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -432,7 +463,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -443,7 +475,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -454,7 +487,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -465,7 +499,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -476,7 +511,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -487,7 +523,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -498,7 +535,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -509,7 +547,8 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
   {
     id: nanoid(),
@@ -520,6 +559,7 @@ export const routes = [
     walkTime: "20 Minutes",
     sector: "Roche aux Sabot",
     area: "Île-de-France",
-    pos: "48.37491, 2.51444",
+    lng: 2.51444,
+    lat: 48.37491,
   },
 ];
