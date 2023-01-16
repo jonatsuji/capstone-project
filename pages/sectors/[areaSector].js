@@ -52,7 +52,6 @@ const StyledSectorCard = styled.div`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  //margin: 10px;
   width: 100vw;
   max-width: 800px;
   :hover {

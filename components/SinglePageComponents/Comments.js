@@ -31,9 +31,9 @@ export default function Comments({ id }) {
     setRating(0);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (commentIndex) => {
     const updatedComments = [...comments];
-    updatedComments.splice(id, 1);
+    updatedComments.splice(commentIndex, 1);
     setComments(updatedComments);
     localStorage.setItem(`comments-${id}`, JSON.stringify(updatedComments));
   };
@@ -52,8 +52,10 @@ export default function Comments({ id }) {
           name="name"
           value={name}
           onChange={handleChange}
-        ></StyledNameInput>
+        />
         <StyledRatingBox>
+          Rating:<br></br>
+          <img src="" />
           <input
             type="radio"
             name="rating"
@@ -102,19 +104,26 @@ export default function Comments({ id }) {
           name="comment"
           value={comment}
           onChange={handleChange}
-        ></StyledCommentInput>
+        />
       </StyledForm>
-
-      <StyledComments>
-        {comments.map((comment, id) => (
-          <div key={id}>
-            <StyledCommentName>from: {comment.name}</StyledCommentName>
-            <StyledCommentText>"{comment.comment}"</StyledCommentText>
-            <p>Rating: {comment.rating}</p>
-            <button onClick={() => handleDelete(id)}>Delete</button>
-          </div>
-        ))}
-      </StyledComments>
+      {comments && comments.length ? (
+        <StyledComments>
+          {comments.map((comment, id) => (
+            <div key={id}>
+              <StyledCommentName>from: {comment.name}</StyledCommentName>
+              <StyledCommentText>"{comment.comment}"</StyledCommentText>
+              <p>Rating: {comment.rating}</p>
+              <button onClick={() => handleDelete(id)}>Delete</button>
+            </div>
+          ))}
+        </StyledComments>
+      ) : (
+        <StyledComments>
+          <StyledPlaceholderComments>
+            Be the first, to write down your opinion!
+          </StyledPlaceholderComments>
+        </StyledComments>
+      )}
     </StyledCommentsContainer>
   );
 }
@@ -127,7 +136,7 @@ const StyledCommentsHeadline = styled.h2`
 const StyledCommentsContainer = styled.section`
   grid-area: h;
   width: 100%;
-  border: 1px solid black;
+
   justify-self: center;
   display: flex;
   flex-direction: column;
@@ -139,7 +148,7 @@ const StyledComments = styled.div`
   max-height: 500px;
   overflow-y: scroll;
   margin-bottom: 40px;
-  border: 1px red solid;
+  border: 1px black solid;
   width: 70%;
   align-self: center;
   background-color: white;
@@ -160,8 +169,9 @@ const StyledForm = styled.form`
   flex-direction: column;
   grid-template-areas:
     "a b c"
-    "d d d";
-  grid-template-columns: 40% 30% 30%;
+    "d d d"
+    "e e e";
+  grid-template-columns: 40% 20% 40%;
   gap: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -169,18 +179,27 @@ const StyledForm = styled.form`
 
 const StyledNameInput = styled.input`
   grid-area: a;
+  line-height: 30px;
   border-radius: 10px;
+  border: 1px black solid;
+  :focus {
+    outline: 2px blue solid;
+  }
 `;
 
 const StyledCommentInput = styled.input`
   grid-area: d;
   border-radius: 10px;
-  line-height: 30px;
+  line-height: 40px;
   margin-right: 20px;
+  border: 1px black solid;
+  :focus {
+    outline: 2px blue solid;
+  }
 `;
 
 const StyledSendButton = styled.button`
-  grid-area: c;
+  grid-area: e;
   align-self: end;
   margin-right: 20px;
   border-radius: 5px;
@@ -208,6 +227,11 @@ const StyledSendButton = styled.button`
 `;
 
 const StyledRatingBox = styled.div`
-  border: 1px green solid;
-  grid-area: b;
+  grid-area: c;
+  margin-right: 30px;
+`;
+
+const StyledPlaceholderComments = styled.p`
+  font-style: italic;
+  text-align: center;
 `;
