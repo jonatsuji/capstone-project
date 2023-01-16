@@ -46,6 +46,7 @@ const StyledCard = styled.article`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
+  max-width: 800px;
 
   width: 100vw;
   :hover {

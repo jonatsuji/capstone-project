@@ -42,6 +42,7 @@ export default function Sectors() {
 const StyledSectorCard = styled.div`
   text-align: left;
   align-items: flex-end;
+  align-self: center;
   font-weight: bold;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -51,8 +52,8 @@ const StyledSectorCard = styled.div`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  //margin: 10px;
   width: 100vw;
+  max-width: 800px;
   :hover {
     cursor: pointer;
   }
