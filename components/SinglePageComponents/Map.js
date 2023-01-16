@@ -22,6 +22,7 @@ export default function MapContainer() {
         mapboxAccessToken="pk.eyJ1Ijoiam9uYXRzdWppIiwiYSI6ImNsY3Jpamc3MjAxNXYzcG14ZWhsZjJpcTkifQ.J65lhDbm_-LV0-exyyKFlA"
         style={{
           width: "100vw",
+          maxWidth: "800px",
           height: "300px",
           borderRadius: "15px",
           border: "2px solid black",
@@ -48,10 +49,14 @@ export default function MapContainer() {
 const StyledMapHeadline = styled.h2`
   text-align: center;
   font-size: 30px;
+  width: 100vw;
 `;
 
 const StyledMapContainer = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
   grid-area: g;
-  justify-self: center;
+  align-self: center;
+  align-items: center;
 `;
