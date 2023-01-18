@@ -3,7 +3,7 @@ import Link from "next/link";
 import SearchBar from "../SearchBar/SearchBar";
 import Header from "../Header/Header";
 
-export default function Areas({ areas }) {
+export default function Areas({ areas, routes }) {
   return (
     <>
       <StyledPageContainer>
@@ -24,7 +24,7 @@ export default function Areas({ areas }) {
           ))}
         </StyledUl>
       </StyledPageContainer>
-      <SearchBar />
+      <SearchBar routes={routes} />
     </>
   );
 }
@@ -48,8 +48,7 @@ const StyledCard = styled.article`
   border-radius: 35px;
   padding: 20px;
   max-width: 800px;
-
-  width: 100vw;
+  width: 90vw;
   :hover {
     cursor: pointer;
   }
@@ -101,7 +100,6 @@ const StyledPageContainer = styled.section`
   gap: 10px;
   max-height: 100vh;
   overflow-x: hidden;
-  border: 2px solid green;
 `;
 
 const StyledTopic = styled.h1`

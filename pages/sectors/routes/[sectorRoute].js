@@ -56,7 +56,7 @@ export default function Route({ routes }) {
           ))}
         </StyledList>
       </StyledPageContainer>
-      <SearchBar />
+      <SearchBar routes={routes} />
     </>
   );
 }

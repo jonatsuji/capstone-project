@@ -36,6 +36,16 @@ export default function DetailTable({ routes }) {
         <StyledProperty>Area:</StyledProperty>
         <StyledPropertyValue>{currentRoute.area}</StyledPropertyValue>{" "}
       </StyledDetailItem>
+      {currentRoute.video != "" && (
+        <StyledDetailItem>
+          <StyledProperty>Video:</StyledProperty>
+          <StyledPropertyValue>
+            <StyledYoutubeLink href={currentRoute.video}>
+              watch on youtube
+            </StyledYoutubeLink>
+          </StyledPropertyValue>{" "}
+        </StyledDetailItem>
+      )}
     </StyledDetails>
   );
 }
@@ -58,6 +68,11 @@ const StyledDetailItem = styled.li`
 `;
 
 const StyledProperty = styled.p``;
+
+const StyledYoutubeLink = styled.a`
+  text-decoration: none;
+  color: darkred;
+`;
 
 const StyledPropertyValue = styled.p`
   text-align: right;

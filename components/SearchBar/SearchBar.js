@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { routes } from "../../data/lib";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ routes }) {
   const [filteredData, setFilteredData] = useState([]);
 
   function handleFilter(event) {

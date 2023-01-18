@@ -29,8 +29,7 @@ export default async function handler(req, res) {
 
     if (result) {
       return res.status(200).json({ message: "comment deleted" });
-    }
-    {
+    } else {
       return res.status(404).json({ message: "comment not found" });
     }
   }

@@ -6,7 +6,7 @@ import Image from "next/image";
 import BackArrow from "../../public/images/back-arrow-white.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-export default function Sectors({ sectors }) {
+export default function Sectors({ sectors, routes }) {
   const router = useRouter();
   const { areaSector } = router.query;
 
@@ -14,12 +14,14 @@ export default function Sectors({ sectors }) {
     return null;
   }
 
+  console.log(sectors, "SEKTOR");
+
   const areaSectors = sectors.filter((sector) => sector.area === areaSector);
 
   return (
     <>
       <Header />
-      <SearchBar />
+      <SearchBar routes={routes} />
       <ImgWrapper href="/">
         <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
       </ImgWrapper>
@@ -51,7 +53,7 @@ const StyledSectorCard = styled.div`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  width: 100vw;
+  width: 90vw;
   max-width: 800px;
   :hover {
     cursor: pointer;

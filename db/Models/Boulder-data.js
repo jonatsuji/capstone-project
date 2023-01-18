@@ -18,6 +18,7 @@ const boulderSchema = new Schema({
   lat: { type: Number, required: false },
   lengths: { type: Number, required: false },
   slug: { type: String, required: false },
+  video: { type: String, required: false },
 });
 
 // Question Model erlaubt uns die CRUD-Operationen

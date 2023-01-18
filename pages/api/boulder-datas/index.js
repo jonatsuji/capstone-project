@@ -23,6 +23,7 @@ export default async function handler(req, res) {
         lat: dataObject.lat,
         length: dataObject.lengths,
         slug: dataObject.slug,
+        video: dataObject.video,
       };
     });
 

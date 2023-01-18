@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import Image from "next/image";
+import STAR_FILLED from "../../public/images/star_filled.png";
 
 export default function Comments({ currentRouteID }) {
   const [name, setName] = useState("");
@@ -7,11 +9,12 @@ export default function Comments({ currentRouteID }) {
   const [comments, setComments] = useState([]);
   const [rating, setRating] = useState(0);
 
+  async function performFetch() {
+    const allComments = await getComments();
+    setComments(allComments);
+  }
+
   useEffect(() => {
-    async function performFetch() {
-      const allComments = await getComments();
-      setComments(allComments);
-    }
     performFetch();
   }, []);
 
@@ -21,7 +24,6 @@ export default function Comments({ currentRouteID }) {
     try {
       const response = await fetch(`/api/comments`);
       const data = await response.json();
-      //Hier über alle Comments filtern und nur die returnen, die auch die routeID hinterlegt haben.
       const routeComments = data.filter((comment) => {
         if (comment.routeID === currentRouteID) {
           return comment;
@@ -29,7 +31,6 @@ export default function Comments({ currentRouteID }) {
           return null;
         }
       });
-      //Die gefilterten Comments zurück geben
       return routeComments;
     } catch (error) {
       console.error(error);
@@ -57,8 +58,7 @@ export default function Comments({ currentRouteID }) {
     const form = event.target.elements;
     const newName = form.name.value;
     const newComment = form.comment.value;
-    const newRating = form.rating.value;
-    //--^^^--- Habe schon versucht den value der const aus den global states zu nehmen (Zeile 5-8)---^^^--
+    const newRating = rating;
 
     const newPost = {
       name: newName,
@@ -71,21 +71,13 @@ export default function Comments({ currentRouteID }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newPost),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(response.statusText);
-        }
-        return response.json();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    });
 
-    getComments();
+    performFetch();
 
-    event.target.reset();
-    event.target.name.focus();
+    setName("");
+    setComment("");
+    setRating(0);
   }
 
   //-----DELETE
@@ -94,7 +86,7 @@ export default function Comments({ currentRouteID }) {
     await fetch(`/api/comments/${id}`, {
       method: "DELETE",
     });
-    getComments();
+    performFetch();
   }
 
   //-----
@@ -104,7 +96,7 @@ export default function Comments({ currentRouteID }) {
   return (
     <StyledCommentsContainer>
       <StyledCommentsHeadline>Comments & Rating</StyledCommentsHeadline>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm onSubmit={(event) => handleSubmit(event, currentRouteID)}>
         <StyledNameInput
           type="text"
           placeholder="Name"
@@ -173,8 +165,11 @@ export default function Comments({ currentRouteID }) {
             <div key={comment._id}>
               <StyledCommentName>from: {comment.name}</StyledCommentName>
               <StyledCommentText>"{comment.comment}"</StyledCommentText>
-              <p>Rating: {comment.rating}</p>
-              <button onClick={() => handleDelete(comment.id)}>Delete</button>
+              <p>
+                Rating: {comment.rating}{" "}
+                <Image src={STAR_FILLED} alt="star" width={15} height={15} />
+              </p>
+              <button onClick={() => handleDelete(comment._id)}>Delete</button>
             </div>
           ))}
         </StyledComments>
@@ -197,7 +192,7 @@ const StyledCommentsHeadline = styled.h2`
 const StyledCommentsContainer = styled.section`
   grid-area: h;
   width: 100%;
-
+  max-width: 800px;
   justify-self: center;
   display: flex;
   flex-direction: column;
