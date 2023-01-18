@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { areas } from "../../data/lib";
 import Link from "next/link";
 import SearchBar from "../SearchBar/SearchBar";
+import Header from "../Header/Header";
 
-export default function Areas() {
+export default function Areas({ areas }) {
   return (
     <>
       <StyledPageContainer>
+        <Header />
         <StyledUl>
           <StyledTopic>Boulderareas</StyledTopic>
           {areas.map((area) => (
@@ -30,8 +31,8 @@ export default function Areas() {
 
 const StyledUl = styled.ul`
   padding-inline-start: 0px;
-  //border: 1px green solid;
-  margin-top: 230px;
+  position: relative;
+  margin-top: 50px;
 `;
 
 const StyledCard = styled.article`
@@ -98,14 +99,14 @@ const StyledPageContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  height: 92vh;
+  max-height: 100vh;
   overflow-x: hidden;
+  border: 2px solid green;
 `;
 
 const StyledTopic = styled.h1`
   position: relative;
   color: black;
-  //border: 1px solid green;
   padding-left: 10px;
   font-size: 25px;
   font-weight: bold;
@@ -116,7 +117,6 @@ const StyledTopic = styled.h1`
 const StyledList = styled.li`
   display: flex;
   list-style: none;
-  //border: 1px solid black;
   width: 100%;
   align-items: center;
   justify-content: center;

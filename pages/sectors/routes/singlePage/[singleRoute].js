@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { routes } from "../../../../data/lib";
 import Header from "../../../../components/Header/Header";
 import styled from "styled-components";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -10,7 +9,7 @@ import DetailTable from "../../../../components/SinglePageComponents/DetailTable
 import MapContainer from "../../../../components/SinglePageComponents/Map";
 import Comments from "../../../../components/SinglePageComponents/Comments";
 
-export default function SingleRoute() {
+export default function SingleRoute({ routes }) {
   const router = useRouter();
   const { singleRoute } = router.query;
 
@@ -31,9 +30,9 @@ export default function SingleRoute() {
         <StyledMediaContainer>
           <p>img</p>
         </StyledMediaContainer>
-        <DetailTable />
-        <MapContainer />
-        <Comments id={currentRoute.id} />
+        <DetailTable routes={routes} />
+        <MapContainer routes={routes} />
+        <Comments currentRouteID={currentRoute.id} />
       </StyledPageContainer>
     </>
   );
@@ -66,14 +65,6 @@ const ImgWrapper = styled(Link)`
   grid-area: a;
   align-self: center;
   z-index: 1000;
-`;
-
-const StyledLocationLink = styled.a`
-  position: relative;
-  grid-area: d;
-  text-align: center;
-  margin-top: 10px;
-  color: black;
 `;
 
 const StyledHeadline = styled.h1`

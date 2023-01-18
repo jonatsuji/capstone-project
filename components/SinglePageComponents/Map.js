@@ -3,9 +3,8 @@ import { Marker, GeolocateControl, NavigationControl } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { routes } from "../../data/lib";
 
-export default function MapContainer() {
+export default function MapContainer({ routes }) {
   const router = useRouter();
   const { singleRoute } = router.query;
 

@@ -1,16 +1,42 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-export default function Comments({ id }) {
+export default function Comments({ currentRouteID }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [rating, setRating] = useState(0);
 
   useEffect(() => {
-    const comments = JSON.parse(localStorage.getItem(`comments-${id}`)) || [];
-    setComments(comments);
-  }, [id]);
+    async function performFetch() {
+      const allComments = await getComments();
+      setComments(allComments);
+    }
+    performFetch();
+  }, []);
+
+  //----GET
+
+  async function getComments() {
+    try {
+      const response = await fetch(`/api/comments`);
+      const data = await response.json();
+      //Hier über alle Comments filtern und nur die returnen, die auch die routeID hinterlegt haben.
+      const routeComments = data.filter((comment) => {
+        if (comment.routeID === currentRouteID) {
+          return comment;
+        } else {
+          return null;
+        }
+      });
+      //Die gefilterten Comments zurück geben
+      return routeComments;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  //--------
 
   const handleChange = (event) => {
     if (event.target.name === "name") {
@@ -20,27 +46,60 @@ export default function Comments({ id }) {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newComment = { name, comment, rating };
-    const updatedComments = [...comments, newComment];
-    setComments(updatedComments);
-    localStorage.setItem(`comments-${id}`, JSON.stringify(updatedComments));
-    setName("");
-    setComment("");
-    setRating(0);
-  };
-
-  const handleDelete = (commentIndex) => {
-    const updatedComments = [...comments];
-    updatedComments.splice(commentIndex, 1);
-    setComments(updatedComments);
-    localStorage.setItem(`comments-${id}`, JSON.stringify(updatedComments));
-  };
-
   const handleRating = (event) => {
     setRating(event.target.value);
   };
+
+  //----POST
+
+  async function handleSubmit(event, currentRouteID) {
+    event.preventDefault();
+    const form = event.target.elements;
+    const newName = form.name.value;
+    const newComment = form.comment.value;
+    const newRating = form.rating.value;
+    //--^^^--- Habe schon versucht den value der const aus den global states zu nehmen (Zeile 5-8)---^^^--
+
+    const newPost = {
+      name: newName,
+      comment: newComment,
+      rating: newRating,
+      routeID: currentRouteID,
+    };
+
+    await fetch("/api/comments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPost),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+    getComments();
+
+    event.target.reset();
+    event.target.name.focus();
+  }
+
+  //-----DELETE
+
+  async function handleDelete(id) {
+    await fetch(`/api/comments/${id}`, {
+      method: "DELETE",
+    });
+    getComments();
+  }
+
+  //-----
+
+  console.log(comments, "FOR ID");
 
   return (
     <StyledCommentsContainer>
@@ -52,6 +111,7 @@ export default function Comments({ id }) {
           name="name"
           value={name}
           onChange={handleChange}
+          required
         />
         <StyledRatingBox>
           Rating:<br></br>
@@ -60,40 +120,40 @@ export default function Comments({ id }) {
             type="radio"
             name="rating"
             value="1"
-            onClick={handleRating}
             checked={rating === 1}
+            onChange={handleRating}
           />
           1
           <input
             type="radio"
             name="rating"
             value="2"
-            onClick={handleRating}
             checked={rating === 2}
+            onChange={handleRating}
           />
           2
           <input
             type="radio"
             name="rating"
             value="3"
-            onClick={handleRating}
             checked={rating === 3}
+            onChange={handleRating}
           />
           3
           <input
             type="radio"
             name="rating"
             value="4"
-            onClick={handleRating}
             checked={rating === 4}
+            onChange={handleRating}
           />
           4
           <input
             type="radio"
             name="rating"
             value="5"
-            onClick={handleRating}
             checked={rating === 5}
+            onChange={handleRating}
           />
           5
         </StyledRatingBox>
@@ -104,16 +164,17 @@ export default function Comments({ id }) {
           name="comment"
           value={comment}
           onChange={handleChange}
+          required
         />
       </StyledForm>
       {comments && comments.length ? (
         <StyledComments>
-          {comments.map((comment, id) => (
-            <div key={id}>
+          {comments.map((comment) => (
+            <div key={comment._id}>
               <StyledCommentName>from: {comment.name}</StyledCommentName>
               <StyledCommentText>"{comment.comment}"</StyledCommentText>
               <p>Rating: {comment.rating}</p>
-              <button onClick={() => handleDelete(id)}>Delete</button>
+              <button onClick={() => handleDelete(comment.id)}>Delete</button>
             </div>
           ))}
         </StyledComments>

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { routes } from "../../data/lib";
 import { useRouter } from "next/router";
 
-export default function DetailTable() {
+export default function DetailTable({ routes }) {
   const router = useRouter();
   const { singleRoute } = router.query;
 

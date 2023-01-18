@@ -1,11 +1,9 @@
-import Header from "../components/Header/Header";
 import Areas from "../components/Areas/Areas";
 
-export default function Home() {
+export default function Home({ areas }) {
   return (
     <>
-      <Header />
-      <Areas />
+      <Areas areas={areas} />
     </>
   );
 }

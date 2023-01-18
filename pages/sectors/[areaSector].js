@@ -1,13 +1,12 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { sectors } from "../../data/lib";
 import styled from "styled-components";
 import Header from "../../components/Header/Header.js";
 import Image from "next/image";
 import BackArrow from "../../public/images/back-arrow-white.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-export default function Sectors() {
+export default function Sectors({ sectors }) {
   const router = useRouter();
   const { areaSector } = router.query;
 
