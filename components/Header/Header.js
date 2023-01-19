@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Logo from "../../public/images/Logo-light.png";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <StyledHeader>
-      <Image src={Logo} width={150} alt="logo-light" />
+      <Link href="/">
+        <Image src={Logo} width={150} alt="logo-light" />
+      </Link>
     </StyledHeader>
   );
 }

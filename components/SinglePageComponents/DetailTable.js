@@ -52,7 +52,7 @@ export default function DetailTable({ routes }) {
 
 const StyledDetails = styled.ul`
   position: relative;
-  grid-area: e;
+  grid-area: c;
   line-height: 15px;
   list-style: none;
   padding-inline-start: 0px;

@@ -27,10 +27,15 @@ export default function SingleRoute({ routes }) {
         <ImgWrapper href={`/sectors/routes/${currentRoute.sector}`}>
           <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
         </ImgWrapper>
-        <StyledMediaContainer>
-          <p>img</p>
-        </StyledMediaContainer>
         <DetailTable routes={routes} />
+        <StyledMediaContainer>
+          <Image
+            src="/../../public/images/overhang-red-stone.jpg"
+            width={550}
+            height={300}
+            style={{ objectFit: "cover" }}
+          />
+        </StyledMediaContainer>
         <MapContainer routes={routes} />
         <Comments currentRouteID={currentRoute.id} />
       </StyledPageContainer>
@@ -76,9 +81,9 @@ const StyledHeadline = styled.h1`
 
 const StyledMediaContainer = styled.div`
   border: 1px solid red;
-  grid-area: c;
+  grid-area: d;
   width: 90vw;
-  height: 200px;
+  height: 300px;
   top: 130px;
   justify-self: center;
 `;
