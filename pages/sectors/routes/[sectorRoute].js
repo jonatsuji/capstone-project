@@ -1,13 +1,12 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { routes } from "../../../data/lib";
 import Header from "../../../components/Header/Header";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import styled from "styled-components";
 import BackArrow from "../../../public/images/back-arrow.png";
 import Image from "next/image";
 
-export default function Route() {
+export default function Route({ routes }) {
   const router = useRouter();
   const { sectorRoute } = router.query;
 
@@ -57,7 +56,7 @@ export default function Route() {
           ))}
         </StyledList>
       </StyledPageContainer>
-      <SearchBar />
+      <SearchBar routes={routes} />
     </>
   );
 }

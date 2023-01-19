@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { routes } from "../../data/lib";
 import { useRouter } from "next/router";
 
-export default function DetailTable() {
+export default function DetailTable({ routes }) {
   const router = useRouter();
   const { singleRoute } = router.query;
 
@@ -37,6 +36,16 @@ export default function DetailTable() {
         <StyledProperty>Area:</StyledProperty>
         <StyledPropertyValue>{currentRoute.area}</StyledPropertyValue>{" "}
       </StyledDetailItem>
+      {currentRoute.video != "" && (
+        <StyledDetailItem>
+          <StyledProperty>Video:</StyledProperty>
+          <StyledPropertyValue>
+            <StyledYoutubeLink href={currentRoute.video}>
+              watch on youtube
+            </StyledYoutubeLink>
+          </StyledPropertyValue>{" "}
+        </StyledDetailItem>
+      )}
     </StyledDetails>
   );
 }
@@ -59,6 +68,11 @@ const StyledDetailItem = styled.li`
 `;
 
 const StyledProperty = styled.p``;
+
+const StyledYoutubeLink = styled.a`
+  text-decoration: none;
+  color: darkred;
+`;
 
 const StyledPropertyValue = styled.p`
   text-align: right;

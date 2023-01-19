@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { areas } from "../../data/lib";
 import Link from "next/link";
 import SearchBar from "../SearchBar/SearchBar";
+import Header from "../Header/Header";
 
-export default function Areas() {
+export default function Areas({ areas, routes }) {
   return (
     <>
       <StyledPageContainer>
+        <Header />
         <StyledUl>
           <StyledTopic>Boulderareas</StyledTopic>
           {areas.map((area) => (
@@ -23,15 +24,15 @@ export default function Areas() {
           ))}
         </StyledUl>
       </StyledPageContainer>
-      <SearchBar />
+      <SearchBar routes={routes} />
     </>
   );
 }
 
 const StyledUl = styled.ul`
   padding-inline-start: 0px;
-  //border: 1px green solid;
-  margin-top: 230px;
+  position: relative;
+  margin-top: 50px;
 `;
 
 const StyledCard = styled.article`
@@ -47,8 +48,7 @@ const StyledCard = styled.article`
   border-radius: 35px;
   padding: 20px;
   max-width: 800px;
-
-  width: 100vw;
+  width: 90vw;
   :hover {
     cursor: pointer;
   }
@@ -98,14 +98,13 @@ const StyledPageContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  height: 92vh;
+  max-height: 100vh;
   overflow-x: hidden;
 `;
 
 const StyledTopic = styled.h1`
   position: relative;
   color: black;
-  //border: 1px solid green;
   padding-left: 10px;
   font-size: 25px;
   font-weight: bold;
@@ -116,7 +115,6 @@ const StyledTopic = styled.h1`
 const StyledList = styled.li`
   display: flex;
   list-style: none;
-  //border: 1px solid black;
   width: 100%;
   align-items: center;
   justify-content: center;
