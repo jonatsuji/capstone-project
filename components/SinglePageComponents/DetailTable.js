@@ -52,7 +52,7 @@ export default function DetailTable({ routes }) {
 
 const StyledDetails = styled.ul`
   position: relative;
-  grid-area: e;
+  grid-area: c;
   line-height: 15px;
   list-style: none;
   padding-inline-start: 0px;
@@ -76,4 +76,5 @@ const StyledYoutubeLink = styled.a`
 
 const StyledPropertyValue = styled.p`
   text-align: right;
+  line-height: 25px;
 `;

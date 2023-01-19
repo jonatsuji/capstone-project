@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { sectors } from "../../data/lib";
 import Link from "next/link";
 
-export default function SectorsList() {
+export default function SectorsList({ sectors }) {
   return (
     <StyledPageContainer>
       {sectors.map((sector) => (
