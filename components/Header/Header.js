@@ -41,6 +41,7 @@ const StyledFavourites = styled.p`
 
 const StyledHeartButton = styled(Link)`
   position: absolute;
+  text-decoration: none;
   margin-right: 10px;
   align-self: center;
   display: flex;
