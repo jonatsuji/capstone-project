@@ -101,44 +101,43 @@ export default function Comments({ currentRouteID }) {
         />
         <StyledRatingBox>
           Rating:<br></br>
-          <img src="" />
-          <input
+          <StyledRadio
             type="radio"
             name="rating"
             value="1"
-            checked={rating === 1}
+            checked={rating === "1" && true}
             onChange={handleRating}
           />
           1
-          <input
+          <StyledRadio
             type="radio"
             name="rating"
             value="2"
-            checked={rating === 2}
+            checked={rating === "2" && true}
             onChange={handleRating}
           />
           2
-          <input
+          <StyledRadio
             type="radio"
             name="rating"
             value="3"
-            checked={rating === 3}
+            checked={rating === "3" && true}
             onChange={handleRating}
           />
           3
-          <input
+          <StyledRadio
             type="radio"
             name="rating"
             value="4"
-            checked={rating === 4}
+            checked={rating === "4" && true}
             onChange={handleRating}
           />
           4
-          <input
+          <StyledRadio
             type="radio"
             name="rating"
             value="5"
-            checked={rating === 5}
+            checked={rating === "5" && true}
             onChange={handleRating}
           />
           5
@@ -191,6 +190,12 @@ const StyledCommentsContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 15px;
+`;
+
+const StyledRadio = styled.input`
+  :checked {
+    color: red;
+  }
 `;
 
 const StyledComments = styled.div`
