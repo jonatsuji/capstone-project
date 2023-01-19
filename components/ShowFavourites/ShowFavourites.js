@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export default function ShowFavourites({ routes }) {
   const favouriteObjects = routes.filter((route) => route.isFavourite === true);
-  console.log(favouriteObjects, "ROUTES");
 
   const router = useRouter();
 

@@ -16,7 +16,6 @@ export default function FavButton({ currentRoute }) {
       currentRoute.isFavourite = !currentRoute.isFavourite;
     }
     setIsFavourite(currentRoute.isFavourite);
-    console.log(currentRoute);
   };
 
   return (
