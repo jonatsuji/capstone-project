@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-//import { Dosis } from "../assets/fonts/Dosis/static/Dosis-Regular.ttf";
 
 const GlobalStyles = createGlobalStyle`
    
@@ -50,6 +49,3 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
-
-//background-image: var(--background-filter-toBottom),
-//url(${(props) => props.image});

@@ -56,7 +56,6 @@ const StyledSearch = styled.div`
   width: 100%;
   justify-content: center;
   align-self: center;
-  //border: 1px red solid;
   height: 250px;
 `;
 
@@ -66,7 +65,6 @@ const StyledSearchInputs = styled.div`
   justify-content: center;
   width: 100%;
   bottom: 5px;
-  //border: 1px green solid;
 
   input {
     position: relative;
@@ -103,7 +101,6 @@ const StyledSearchResults = styled.div`
   border-radius: 10px;
   background-color: var(--color-beige);
   z-index: 2;
-  border: 2px green solid;
 
   .resultText {
     margin-left: 10px;

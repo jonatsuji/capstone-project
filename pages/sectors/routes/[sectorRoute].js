@@ -65,7 +65,6 @@ const StyledPageContainer = styled.div`
   background-image: url("/images/stacked-peaks-haikei.png");
   height: 100vh;
   background-size: cover;
-  //border: 3px green solid;
   display: flex;
   justify-content: center;
   overflow-y: hidden;
@@ -93,7 +92,6 @@ const StyledGrade = styled.div`
 const StyledList = styled.ul`
   position: absolute;
   top: 110px;
-  //border-bottom: 3px black solid;
   padding-inline-start: 0px;
   list-style: none;
   width: 100vw;

@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-// Blaupause
 const boulderSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, required: true },
@@ -21,7 +20,6 @@ const boulderSchema = new Schema({
   video: { type: String, required: false },
 });
 
-// Question Model erlaubt uns die CRUD-Operationen
 const BoulderData =
   mongoose.models.BoulderData || mongoose.model("Boulder-data", boulderSchema);
 
