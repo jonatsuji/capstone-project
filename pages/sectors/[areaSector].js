@@ -14,8 +14,6 @@ export default function Sectors({ sectors, routes }) {
     return null;
   }
 
-  console.log(sectors, "SEKTOR");
-
   const areaSectors = sectors.filter((sector) => sector.area === areaSector);
 
   return (

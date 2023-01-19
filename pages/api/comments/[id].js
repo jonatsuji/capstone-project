@@ -1,7 +1,6 @@
 import dbConnect from "../../../db/dbConnect";
 import Comments from "../../../db/Models/Comments";
 
-// /api/questions/6390625d81028414270e1657 // [id]
 export default async function handler(req, res) {
   await dbConnect();
 

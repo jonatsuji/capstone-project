@@ -25,11 +25,7 @@ export default function Comments({ currentRouteID }) {
       const response = await fetch(`/api/comments`);
       const data = await response.json();
       const routeComments = data.filter((comment) => {
-        if (comment.routeID === currentRouteID) {
-          return comment;
-        } else {
-          return null;
-        }
+        return comment.routeID === currentRouteID;
       });
       return routeComments;
     } catch (error) {
@@ -90,8 +86,6 @@ export default function Comments({ currentRouteID }) {
   }
 
   //-----
-
-  console.log(comments, "FOR ID");
 
   return (
     <StyledCommentsContainer>
