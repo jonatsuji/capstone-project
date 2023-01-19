@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter, useState } from "next/router";
 import Link from "next/link";
 import Header from "../../../../components/Header/Header";
 import styled from "styled-components";
@@ -8,6 +8,8 @@ import Image from "next/image";
 import DetailTable from "../../../../components/SinglePageComponents/DetailTable";
 import MapContainer from "../../../../components/SinglePageComponents/Map";
 import Comments from "../../../../components/SinglePageComponents/Comments";
+import ROUTE_IMAGE from "../../../../public/images/overhang-red-stone.jpg";
+import FavButton from "../../../../components/SinglePageComponents/FavButton";
 
 export default function SingleRoute({ routes }) {
   const router = useRouter();
@@ -23,14 +25,23 @@ export default function SingleRoute({ routes }) {
     <>
       <Header />
       <StyledPageContainer>
-        <StyledHeadline>{currentRoute.name}</StyledHeadline>
+        <StyledHeadline>
+          {currentRoute.name}
+          <StyledFavButton currentRoute={currentRoute} />
+        </StyledHeadline>
         <ImgWrapper href={`/sectors/routes/${currentRoute.sector}`}>
-          <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
+          <Image src={BackArrow} alt="back-arrow" width={35} height={35} />
         </ImgWrapper>
-        <StyledMediaContainer>
-          <p>img</p>
-        </StyledMediaContainer>
+
         <DetailTable routes={routes} />
+        <StyledMediaContainer>
+          <Image
+            src={ROUTE_IMAGE}
+            alt="Image of route"
+            width={470}
+            height={280}
+          />
+        </StyledMediaContainer>
         <MapContainer routes={routes} />
         <Comments currentRouteID={currentRoute.id} />
       </StyledPageContainer>
@@ -58,6 +69,10 @@ const StyledPageContainer = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
+const StyledFavButton = styled(FavButton)`
+  align-self: center;
+`;
+
 const ImgWrapper = styled(Link)`
   position: sticky;
   top: 15px;
@@ -65,20 +80,24 @@ const ImgWrapper = styled(Link)`
   grid-area: a;
   align-self: center;
   z-index: 1000;
+  gap: 10px;
 `;
 
 const StyledHeadline = styled.h1`
   top: 50px;
   grid-area: b;
   text-align: right;
-  margin-right: 40px;
+  margin-right: 10px;
+  display: flex;
+  gap: 10px;
 `;
 
 const StyledMediaContainer = styled.div`
-  border: 1px solid red;
-  grid-area: c;
+  border: 1px solid black;
+  grid-area: d;
   width: 90vw;
   height: 200px;
   top: 130px;
   justify-self: center;
+  overflow: hidden;
 `;

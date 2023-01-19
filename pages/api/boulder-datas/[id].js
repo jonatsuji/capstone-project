@@ -35,5 +35,40 @@ export default async function handler(req, res) {
     }
   }
 
+  if (method === "PUT") {
+    const result = await BoulderData.findByIdAndUpdate(
+      id,
+      {
+        id: req.body.id,
+        name: req.body.name,
+        type: req.body.type,
+        grade: req.body.grade,
+        routes: req.body.routes,
+        stone: req.body.stone,
+        country: req.body.country,
+        image: req.body.image,
+        walkTime: req.body.walkTime,
+        sector: req.body.sector,
+        area: req.body.area,
+        lng: req.body.lng,
+        lat: req.body.lat,
+        length: req.body.lengths,
+        slug: req.body.slug,
+        video: req.body.video,
+      },
+
+      {
+        returnDocument: "after",
+      }
+    );
+
+    if (result) {
+      return res.status(200).json(result);
+    }
+    {
+      return res.status(404).json({ message: "object not found" });
+    }
+  }
+
   res.status(405).json({ message: "method not allowed" });
 }
