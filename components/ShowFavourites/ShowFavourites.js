@@ -22,7 +22,9 @@ export default function ShowFavourites({ routes }) {
             key={route.id}
           >
             <StyledRoute>
-              <div>{route.name}</div>
+              <div>
+                {route.name} / {route.sector} / {route.area}
+              </div>
               <StyledGrade>{route.grade}</StyledGrade>
             </StyledRoute>
           </StyledLink>
@@ -67,7 +69,8 @@ const StyledList = styled.ul`
 `;
 
 const StyledRoute = styled.li`
-  border-top: 1px black solid;
+  border: 1px black solid;
+  border: 1px black solid;
   background-color: var(--color-item);
   display: grid;
   grid-template-columns: 85% 1fr;

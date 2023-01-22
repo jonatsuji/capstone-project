@@ -226,7 +226,7 @@ const StyledForm = styled.form`
     "a b c"
     "d d d"
     "e e e";
-  grid-template-columns: 40% 20% 40%;
+  grid-template-columns: 40% 10% 50%;
   gap: 10px;
   margin-left: 10px;
   margin-right: 10px;

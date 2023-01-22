@@ -3,7 +3,8 @@ import Link from "next/link";
 import Header from "../../../components/Header/Header";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import styled from "styled-components";
-import BackArrow from "../../../public/images/back-arrow.png";
+import BackArrow from "../../../public/images/back-arrow-white.png";
+
 import Image from "next/image";
 
 export default function Route({ routes }) {
@@ -62,7 +63,8 @@ export default function Route({ routes }) {
 }
 
 const StyledPageContainer = styled.div`
-  background-image: url("/images/stacked-peaks-haikei.png");
+
+  background-color: var(--color-brown);
   height: 100vh;
   background-size: cover;
   display: flex;
@@ -73,6 +75,7 @@ const StyledPageContainer = styled.div`
 const StyledHeadline = styled.h1`
   position: relative;
   top: 50px;
+  color: white;
 `;
 
 const StyledRoute = styled.li`

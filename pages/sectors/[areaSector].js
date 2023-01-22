@@ -20,7 +20,7 @@ export default function Sectors({ sectors, routes }) {
     <>
       <Header />
       <SearchBar routes={routes} />
-      <ImgWrapper href="/">
+      <ImgWrapper href="/startAreas">
         <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
       </ImgWrapper>
       <StyledPageContainer>
