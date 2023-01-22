@@ -70,6 +70,7 @@ const StyledList = styled.ul`
 
 const StyledRoute = styled.li`
   border: 1px black solid;
+  border: 1px black solid;
   background-color: var(--color-item);
   display: grid;
   grid-template-columns: 85% 1fr;

@@ -1,10 +1,13 @@
+
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/images/Logo(cragList).png";
 
-export default function Home() {
+
+export default function Home({ areas, routes }) {
   return (
+
     <Pagecontainer>
       <ImgWrapper>
         <StyledLogo src={logo} />

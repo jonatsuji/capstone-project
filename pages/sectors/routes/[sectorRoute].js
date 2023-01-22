@@ -4,6 +4,7 @@ import Header from "../../../components/Header/Header";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import styled from "styled-components";
 import BackArrow from "../../../public/images/back-arrow-white.png";
+
 import Image from "next/image";
 
 export default function Route({ routes }) {
@@ -62,6 +63,7 @@ export default function Route({ routes }) {
 }
 
 const StyledPageContainer = styled.div`
+
   background-color: var(--color-brown);
   height: 100vh;
   background-size: cover;
