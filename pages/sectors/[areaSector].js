@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { sectors } from "../../data/lib";
 import styled from "styled-components";
 import Header from "../../components/Header/Header.js";
 import Image from "next/image";
 import BackArrow from "../../public/images/back-arrow-white.png";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
-export default function Sectors() {
+export default function Sectors({ sectors, routes }) {
   const router = useRouter();
   const { areaSector } = router.query;
 
@@ -19,7 +19,8 @@ export default function Sectors() {
   return (
     <>
       <Header />
-      <ImgWrapper href="/">
+      <SearchBar routes={routes} />
+      <ImgWrapper href="/startAreas">
         <Image src={BackArrow} alt="back-arrow" width={30} height={30} />
       </ImgWrapper>
       <StyledPageContainer>
@@ -40,20 +41,24 @@ export default function Sectors() {
 const StyledSectorCard = styled.div`
   text-align: left;
   align-items: flex-end;
+  align-self: center;
   font-weight: bold;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
-  background-color: #af9164;
+  background-color: var(--color-item);
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  margin: 10px;
+  width: 90vw;
+  max-width: 800px;
   :hover {
     cursor: pointer;
   }
   font-size: 25px;
+  -webkit-box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
+  box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
 `;
 
 const StyledLink = styled(Link)`
@@ -82,9 +87,10 @@ const StyledPageContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 10px;
   height: 100vh;
-  margin-top: 80px;
+  margin-top: 90px;
+  overflow-y: scroll;
 `;
 
 const ImgWrapper = styled(Link)`

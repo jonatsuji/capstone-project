@@ -1,16 +1,23 @@
 import { createGlobalStyle } from "styled-components";
-//import { Dosis } from "../assets/fonts/Dosis/static/Dosis-Regular.ttf";
 
 const GlobalStyles = createGlobalStyle`
    
    :root{
     --color-beige: #F7F3E3;
     --color-brown: #564138;
+    --color-item: #af9164
     
    }
    
    html,
     body {
+      ::-webkit-scrollbar{
+        display: none;
+      }
+      overflow: scroll;
+      scroll-behavior: smooth;
+      height: 100vh;
+      position: relative;
         padding: 0;
         margin: 0;
         font-family: Dosis;
@@ -23,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
       rgba(255, 255, 255, 0) 100%
     ),
     url("/images/sandstone-bright-crack.jpg");
+    z-index: -100;
   background-size: cover;
   background-attachment: fixed;
         
@@ -41,6 +49,3 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
-
-//background-image: var(--background-filter-toBottom),
-//url(${(props) => props.image});

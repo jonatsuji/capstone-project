@@ -1,24 +1,39 @@
 import styled from "styled-components";
-import { areas } from "../../data/lib";
 import Link from "next/link";
+import SearchBar from "../SearchBar/SearchBar";
+import Header from "../Header/Header";
 
-export default function Areas() {
+export default function Areas({ areas, routes }) {
   return (
-    <StyledPageContainer>
-      <StyledTopic>I need Information about...</StyledTopic>
-      {areas.map((area) => (
-        <StyledLink key={area.id} href={`sectors/${area.name}`}>
-          <StyledCard>
-            <StyledName>{area.name}</StyledName>
-            <StyledRoutes>Routes: {area.routes}</StyledRoutes>
-            <StyledStone>{area.stone}</StyledStone>
-            <StyledCountry>{area.country}</StyledCountry>
-          </StyledCard>
-        </StyledLink>
-      ))}
-    </StyledPageContainer>
+    <>
+      <StyledPageContainer>
+        <Header />
+        <StyledUl>
+          <StyledTopic>Boulderareas</StyledTopic>
+          {areas.map((area) => (
+            <StyledList key={area.id}>
+              <StyledLink href={`sectors/${area.name}`}>
+                <StyledCard>
+                  <StyledName>{area.name}</StyledName>
+                  <StyledRoutes>Routes: {area.routes}</StyledRoutes>
+                  <StyledStone>{area.stone}</StyledStone>
+                  <StyledCountry>{area.country}</StyledCountry>
+                </StyledCard>
+              </StyledLink>
+            </StyledList>
+          ))}
+        </StyledUl>
+      </StyledPageContainer>
+      <SearchBar routes={routes} />
+    </>
   );
 }
+
+const StyledUl = styled.ul`
+  padding-inline-start: 0px;
+  position: relative;
+  margin-top: 50px;
+`;
 
 const StyledCard = styled.article`
   text-align: left;
@@ -32,10 +47,12 @@ const StyledCard = styled.article`
   border: 1px black solid;
   border-radius: 35px;
   padding: 20px;
-  margin: 10px;
+  max-width: 800px;
+  width: 90vw;
   :hover {
     cursor: pointer;
   }
+
   font-size: 25px;
   -webkit-box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
   box-shadow: 0px 12px 10px -6px rgba(0, 0, 0, 0.73);
@@ -78,15 +95,28 @@ const StyledCountry = styled.p`
 
 const StyledPageContainer = styled.section`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  height: 100vh;
+  gap: 10px;
+  max-height: 100vh;
+  overflow-x: hidden;
 `;
 
 const StyledTopic = styled.h1`
-  position: absolute;
-  top: 100px;
-  align-self: center;
-  color: white;
+  position: relative;
+  color: black;
+  padding-left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
+  z-index: -1;
+`;
+
+const StyledList = styled.li`
+  display: flex;
+  list-style: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 `;
